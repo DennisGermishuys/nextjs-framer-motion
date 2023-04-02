@@ -38,7 +38,265 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+
+  --background-rgb: 29 30 34;
+
+  --blue-rgb: 33 150 243;
+  --primary-rgb: var(--blue-rgb);
+
+  --blob-color-1: rgb(var(--blue-rgb));
+  --blob-color-2: dodgerblue;
 }
+
+.screen {
+  width: 450px;
+  display: flex;
+  border: 3px solid rgb(var(--primary-rgb) / 80%);
+  aspect-ratio: 10 / 16;
+  border-radius: 1rem;
+  background-color: rgb(var(--primary-rgb) / 15%);
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.screen:after,
+.screen:before {
+  content: "";
+  height: 5px;
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  translate: -50% 0%;
+  background-color: white;
+}
+
+.screen:before {
+  width: 15%;
+  top: 0rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.screen:after {
+  width: 25%;
+  bottom: 0rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+@keyframes pan-overlay {
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 0% -100%;
+  }
+}
+
+.screen-overlay {
+  background: linear-gradient(
+          rgb(var(--primary-rgb) / 0.15),
+          rgb(var(--primary-rgb) / 0.15) 3px,
+          transparent 3px,
+          transparent 9px
+  );
+  background-size: 100% 9px;
+  height: 100%;
+  width: 100%;
+  animation: pan-overlay 22s infinite linear;
+  position: absolute;
+  z-index: 2;
+  left: 0px;
+  top: 0px;
+}
+
+@keyframes pan-image {
+  0% {
+    background-position: 36% 42%;
+  }
+
+  20% {
+    background-position: 30% 35%;
+  }
+
+  20.0001% { /* -- View 2 -- */
+    background-position: 60% 85%;
+  }
+
+  40% {
+    background-position: 49% 81%;
+  }
+
+  40.0001% { /* -- View 3 -- */
+    background-position: 80% 42%;
+  }
+
+  60% {
+    background-position: 84% 33%;
+  }
+
+  60.0001% { /* -- View 4 -- */
+    background-position: 0 0;
+  }
+
+  80% {
+    background-position: 15% 4%;
+  }
+
+  80.0001% { /* -- View 5 -- */
+    background-position: 80% 10%;
+  }
+
+  100% {
+    background-position: 72% 14%;
+  }
+}
+
+.screen > .screen-image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-size: 300%;
+  background-position: 0 0;
+  filter: sepia(100%) hue-rotate(160deg);
+  opacity: 0.6;
+  animation: pan-image 17s linear infinite;
+}
+
+.screen:hover > .screen-image {
+  animation: pan-image 17s linear infinite;
+}
+
+.screen > .screen-image.nextjs {
+  background-image: url("../../public/reactcard.jpg");
+}
+
+.screen > .screen-image.typescript {
+  background-image: url("../../public/thumb.webp");
+}
+
+.screen > .screen-image.nodejs {
+  background-image: url("../../public/nodecard.png");
+}
+
+.screen > .screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  gap: 4rem;
+  position: relative;
+  z-index: 3;
+  margin: 1rem;
+  padding-bottom: 6rem;
+  border: 1px solid rgb(var(--primary-rgb) / 50%);
+  border-radius: 0.6rem;
+}
+
+.screen > .screen-content > .screen-icon {
+  color: white;
+  font-size: 4rem;
+  text-shadow: 0 0 0.5rem white;
+  position: relative;
+  top: 30px;
+}
+
+.fa-codepen:before {
+  font-family: "Source Code Pro", monospace;
+  content: '~';
+}
+
+.screen > .screen-content > .screen-user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.screen > .screen-content > .screen-user:before,
+.screen > .screen-content > .screen-user:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  background-color: rgb(var(--primary-rgb));
+  border-radius: 1rem;
+  box-shadow: 0 0 8px 3px rgb(var(--primary-rgb) / 60%);
+}
+
+.screen > .screen-content > .screen-user:before {
+  height: 2px;
+  width: 50px;
+  translate: -20px -1rem;
+  opacity: 0.75;
+}
+
+.screen > .screen-content > .screen-user:after {
+  height: 3px;
+  width: 30px;
+  translate: 26px calc(-1rem - 0.5px);
+}
+
+.screen > .screen-content > .screen-user > :is(.name, .link) {
+  font-family: "Source Code Pro", monospace;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.screen > .screen-content > .screen-user > .name {
+  position: relative;
+  font-size: 55px;
+  font-weight: 400;
+}
+
+.screen > .screen-content > .screen-user > .name:before,
+.screen > .screen-content > .screen-user > .name:after {
+  content: "";
+  height: 4px;
+  width: 4px;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 2px;
+}
+
+.screen > .screen-content > .screen-user > .name:before {
+  top: 55%;
+  right: -1.5rem;
+}
+
+.screen > .screen-content > .screen-user > .name:after {
+  top: 45%;
+  left: -1.5rem;
+}
+
+.screen > .screen-content > .screen-user > .link {
+  opacity: 0.8;
+  font-size: 1.5rem;
+  text-shadow: 0px 0px 0.5rem white;
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+  text-decoration: none;
+}
+
+.screen > .screen-content > .screen-user > .link:is(:hover, :focus) {
+  text-decoration: underline;
+}
+
+@media(max-width: 700px) {
+  .screen {
+    scale: 0.6;
+    margin-bottom: 0rem;
+  }
+}
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {

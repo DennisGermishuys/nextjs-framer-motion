@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 .main {
   display: flex;
   flex-direction: column;
@@ -5,6 +7,45 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+}
+
+.heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 58px;
+}
+
+.developer {
+  color: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  -webkit-text-stroke: 2px lightgray;
+  text-transform: uppercase;
+  position: relative;
+  left: 20px;
+}
+
+.developer:before {
+  content: attr(data-text);
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #383d52;
+  -webkit-text-stroke: 0 #383d52;
+  border-right: 2px solid #383d52;
+  overflow: hidden;
+  animation: progress 5s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0%, 10%, 100% {
+    width: 0;
+  }
+  70%, 90% {
+    width: 100%;
+  }
 }
 
 .description {
@@ -153,45 +194,17 @@
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
-  }
 
-  .card:hover span {
-    transform: translateX(4px);
-  }
-}
-
-@media (prefers-reduced-motion) {
-  .thirteen::before {
-    animation: none;
-  }
-
-  .card:hover span {
-    transform: none;
-  }
 }
 
 /* Mobile */
 @media (max-width: 700px) {
+  .main {
+    padding: 3rem;
+  }
+
   .content {
     padding: 4rem;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    margin-bottom: 120px;
-    max-width: 320px;
-    text-align: center;
-  }
-
-  .card {
-    padding: 1rem 2.5rem;
-  }
-
-  .card h2 {
-    margin-bottom: 0.5rem;
   }
 
   .center {
@@ -244,7 +257,7 @@
     background: linear-gradient(
       to bottom,
       transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
+      rgb(var(--background-end-rgb)) 60%
     );
     z-index: 1;
   }
@@ -252,9 +265,7 @@
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
-  }
+
 }
 
 @media (prefers-color-scheme: dark) {
