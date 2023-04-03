@@ -28,37 +28,11 @@ const cardVariantsN: Variants = {
         y: 0,
         transition: {
             duration: 1,
-            delay: 0.3,
+            delay: 0.4,
             type: "spring"
         },
     },
 };
-
-const textVariants: Variants = {
-    hide: {
-        opacity: 0,
-        y: 50,
-    },
-    show: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 1,
-            // delay: 0.2
-        }
-    }
-}
-
-const container = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            delayChildren: 0.5,
-            staggerDirection: -1
-        }
-    }
-}
 
 const animate = (e: React.MouseEvent<HTMLSpanElement>) :void => {
 
@@ -90,7 +64,7 @@ const animate = (e: React.MouseEvent<HTMLSpanElement>) :void => {
 }
 const Cards: React.FunctionComponent = () => {
     return (
-        <motion.div variants={container} className={styles.wrapper}>
+        <div className={styles.wrapper}>
 
             <section className={styles.section}>
             <motion.div className="screen" id={'screen'}
@@ -99,24 +73,29 @@ const Cards: React.FunctionComponent = () => {
                         variants={cardVariants}
                         viewport={{ once: true }}
             >
-                <div className="screen-image nextjs"></div>
+                <div className="screen-image nodejs"></div>
                 <div className="screen-overlay"></div>
                 <div className="screen-content">
                     <i className="screen-icon fa-brands fa-codepen"></i>
                     <div className="screen-user">
-                        <span id={'name'} className="name" data-value="NextJS" onMouseEnter={(e) => animate(e)}>NextJS</span>
-                        <a className="link" href="https://nextjs.org/showcase" target="_blank">@NextJS/Showcase</a>
+                            <span
+                                id={'name'}
+                                className="name"
+                                data-value="NodeJS"
+                                onMouseEnter={(e) => animate(e)}
+                            >
+                                NodeJS
+                            </span>
+                        <a
+                            className="link"
+                            href="https://nodejs.org/en/docs"
+                            target="_blank"
+                        >
+                            @NodeJS/Docs
+                        </a>
                     </div>
                 </div>
             </motion.div>
-            {/*<motion.span*/}
-            {/*    className={styles.motionSpan}*/}
-            {/*    initial={'hide'}*/}
-            {/*    whileInView={'show'}*/}
-            {/*    variants={textVariants}*/}
-            {/* >*/}
-            {/*    Using NextJS, building fast, responsive websites with the best possible SEO in mind*/}
-            {/*</motion.span>*/}
             </section>
 
             <section className={styles.section}>
@@ -149,15 +128,6 @@ const Cards: React.FunctionComponent = () => {
                         </div>
                     </div>
                 </motion.div>
-                {/*<motion.span*/}
-                {/*    className={styles.motionSpan}*/}
-                {/*    initial={'hide'}*/}
-                {/*    whileInView={'show'}*/}
-                {/*    variants={textVariants}*/}
-                {/*    >*/}
-                {/*    Comfortable working on both your Frontend and Backend.*/}
-                {/*    Keeping them both typesafe and avoiding bugs using TypeScripts typesafety features*/}
-                {/*</motion.span>*/}
             </section>
 
             <section className={styles.section}>
@@ -167,41 +137,19 @@ const Cards: React.FunctionComponent = () => {
                             variants={cardVariants}
                             viewport={{ once: true }}
                 >
-                    <div className="screen-image nodejs"></div>
+                    <div className="screen-image nextjs"></div>
                     <div className="screen-overlay"></div>
                     <div className="screen-content">
                         <i className="screen-icon fa-brands fa-codepen"></i>
                         <div className="screen-user">
-                            <span
-                                id={'name'}
-                                className="name"
-                                data-value="NodeJS"
-                                onMouseEnter={(e) => animate(e)}
-                            >
-                                NodeJS
-                            </span>
-                            <a
-                                className="link"
-                                href="https://nodejs.org/en/docs"
-                                target="_blank"
-                            >
-                                @NodeJS/Docs
-                            </a>
+                            <span id={'name'} className="name" data-value="NextJS" onMouseEnter={(e) => animate(e)}>NextJS</span>
+                            <a className="link" href="https://nextjs.org/showcase" target="_blank">@NextJS/Showcase</a>
                         </div>
                     </div>
                 </motion.div>
-                {/*<motion.span*/}
-                {/*    className={styles.motionSpan}*/}
-                {/*    initial={'hide'}*/}
-                {/*    whileInView={'show'}*/}
-                {/*    variants={textVariants}*/}
-                {/*>*/}
-                {/*    Comfortable working on both your Frontend and Backend.*/}
-                {/*    Keeping them both typesafe and avoiding bugs using TypeScripts typesafety features*/}
-                {/*</motion.span>*/}
             </section>
 
-            </motion.div>
+            </div>
 
     )
 }

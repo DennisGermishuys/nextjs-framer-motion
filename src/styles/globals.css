@@ -48,6 +48,33 @@
   --blob-color-2: dodgerblue;
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+          to bottom,
+          transparent,
+          rgb(var(--background-end-rgb))
+  )
+  rgb(var(--background-start-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .screen {
   width: 450px;
   display: flex;
@@ -73,25 +100,25 @@
 
 .screen:before {
   width: 15%;
-  top: 0rem;
+  top: 0;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
 
 .screen:after {
   width: 25%;
-  bottom: 0rem;
+  bottom: 0;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
 
 @keyframes pan-overlay {
   from {
-    background-position: 0% 0%;
+    background-position: 0 0;
   }
 
   to {
-    background-position: 0% -100%;
+    background-position: 0 -100%;
   }
 }
 
@@ -108,8 +135,8 @@
   animation: pan-overlay 22s infinite linear;
   position: absolute;
   z-index: 2;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
 }
 
 @keyframes pan-image {
@@ -161,27 +188,24 @@
   z-index: 1;
   left: 0;
   top: 0;
-  background-size: 300%;
-  background-position: 0 0;
+  background-size: 200%;
+  background-position: 0% 0%;
   filter: sepia(100%) hue-rotate(160deg);
   opacity: 0.6;
   animation: pan-image 17s linear infinite;
 }
 
-.screen:hover > .screen-image {
-  animation: pan-image 17s linear infinite;
-}
-
 .screen > .screen-image.nextjs {
-  background-image: url("../../public/reactcard.jpg");
+  background-image: url("../../public/nextcard.webp");
 }
 
 .screen > .screen-image.typescript {
-  background-image: url("../../public/thumb.webp");
+  background-image: url("../../public/typescriptcard.webp");
 }
 
 .screen > .screen-image.nodejs {
-  background-image: url("../../public/nodecard.png");
+  background-image: url("../../public/nodecard.webp");
+  background-size: 300%;
 }
 
 .screen > .screen-content {
@@ -329,36 +353,7 @@
     --card-rgb: 100, 100, 100;
     --card-border-rgb: 200, 200, 200;
   }
-}
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }

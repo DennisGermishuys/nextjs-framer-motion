@@ -1,11 +1,10 @@
 .wrapper {
     display: grid;
-    grid-auto-flow: column;
     gap: 100px;
 }
 
 .section {
-    /*min-height: 100vh;*/
+    padding-top: 5px;
     width: 100%;
     display: grid;
     justify-content: center;
@@ -93,8 +92,8 @@
     animation: pan-overlay 22s infinite linear;
     position: absolute;
     z-index: 2;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
 }
 
 .screen > .screen-content > .screen-icon {
