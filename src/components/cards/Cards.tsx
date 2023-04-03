@@ -2,7 +2,6 @@ import styles from "./cards.module.css"
 import React from "react";
 import { Variants, motion } from "framer-motion";
 
-
 const cardVariants: Variants = {
     hide: {
         opacity: 0,
@@ -34,19 +33,19 @@ const cardVariantsN: Variants = {
     },
 };
 
-const animate = (e: React.MouseEvent<HTMLSpanElement>) :void => {
+const animate = (e: React.MouseEvent<HTMLSpanElement>): void => {
 
-    const letters :string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let interval :any = null;
+    const letters: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let interval: any = null;
     const name = e.target as HTMLElement;
-    let iteration = 0;
+    let iteration: number = 0;
 
     clearInterval(interval);
 
     interval = setInterval(() => {
         name.innerText = name.innerText
             .split("")
-            .map((letter, index) => {
+            .map((letter: string, index: number) => {
                 if(index < iteration && typeof name.dataset.value !== 'undefined') {
                     return name.dataset.value[index];
                 }
@@ -55,13 +54,14 @@ const animate = (e: React.MouseEvent<HTMLSpanElement>) :void => {
             })
             .join("");
 
-        if(typeof name.dataset.value !== 'undefined' && iteration >= name.dataset.value.length){
+        if (typeof name.dataset.value !== 'undefined' && iteration >= name.dataset.value.length){
             clearInterval(interval);
         }
 
         iteration += 1 / 3;
     }, 30);
 }
+
 const Cards: React.FunctionComponent = () => {
     return (
         <div className={styles.wrapper}>
@@ -142,8 +142,21 @@ const Cards: React.FunctionComponent = () => {
                     <div className="screen-content">
                         <i className="screen-icon fa-brands fa-codepen"></i>
                         <div className="screen-user">
-                            <span id={'name'} className="name" data-value="NextJS" onMouseEnter={(e) => animate(e)}>NextJS</span>
-                            <a className="link" href="https://nextjs.org/showcase" target="_blank">@NextJS/Showcase</a>
+                            <span
+                                id={'name'}
+                                className="name"
+                                data-value="NextJS"
+                                onMouseEnter={(e) => animate(e)}
+                            >
+                                NextJS
+                            </span>
+                            <a
+                                className="link"
+                                href="https://nextjs.org/showcase"
+                                target="_blank"
+                            >
+                                @NextJS/Showcase
+                            </a>
                         </div>
                     </div>
                 </motion.div>
