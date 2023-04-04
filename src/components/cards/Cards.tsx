@@ -66,7 +66,16 @@ const Cards: React.FunctionComponent = () => {
     return (
         <div className={styles.wrapper}>
 
-            <section className={styles.section}>
+            <motion.section className={styles.section}
+                            whileHover={{ scale: 1.05 }}
+                            transition={
+                                {
+                                    type: "spring",
+                                    stiffness: 400,
+                                    damping: 10
+                                }
+                            }
+            >
             <motion.div className="screen" id={'screen'}
                         initial={'hide'}
                         whileInView={'show'}
@@ -96,14 +105,24 @@ const Cards: React.FunctionComponent = () => {
                     </div>
                 </div>
             </motion.div>
-            </section>
+            </motion.section>
 
-            <section className={styles.section}>
+            <motion.section className={styles.section}
+                            whileHover={{ scale: 1.05 }}
+                            transition={
+                                {
+                                    type: "spring",
+                                    stiffness: 400,
+                                    damping: 10
+                                }
+                            }
+            >
                 <motion.div className="screen" id={'screen'}
                             initial={'hide'}
                             whileInView={'show'}
                             variants={cardVariantsN}
                             viewport={{ once: true }}
+
                 >
                     <div className="screen-image typescript"></div>
                     <div className="screen-overlay"></div>
@@ -128,9 +147,18 @@ const Cards: React.FunctionComponent = () => {
                         </div>
                     </div>
                 </motion.div>
-            </section>
+            </motion.section>
 
-            <section className={styles.section}>
+            <motion.section className={styles.section}
+                            whileHover={{ scale: 1.05 }}
+                            transition={
+                                {
+                                    type: "spring",
+                                    stiffness: 400,
+                                    damping: 10
+                                }
+                            }
+            >
                 <motion.div className="screen" id={'screen'}
                             initial={'hide'}
                             whileInView={'show'}
@@ -160,7 +188,7 @@ const Cards: React.FunctionComponent = () => {
                         </div>
                     </div>
                 </motion.div>
-            </section>
+            </motion.section>
 
             </div>
 
