@@ -76,35 +76,35 @@ const Cards: React.FunctionComponent = () => {
                                 }
                             }
             >
-            <motion.div className="screen" id={'screen'}
-                        initial={'hide'}
-                        whileInView={'show'}
-                        variants={cardVariants}
-                        viewport={{ once: true }}
-            >
-                <div className="screen-image nodejs"></div>
-                <div className="screen-overlay"></div>
-                <div className="screen-content">
-                    <i className="screen-icon fa-brands fa-codepen"></i>
-                    <div className="screen-user">
+                <motion.div className="screen" id={'screen'}
+                            initial={'hide'}
+                            whileInView={'show'}
+                            variants={cardVariants}
+                            viewport={{ once: true }}
+                >
+                    <div className="screen-image nextjs"></div>
+                    <div className="screen-overlay"></div>
+                    <div className="screen-content">
+                        <i className="screen-icon fa-brands fa-codepen"></i>
+                        <div className="screen-user">
                             <span
                                 id={'name'}
                                 className="name"
-                                data-value="NodeJS"
+                                data-value="NextJS"
                                 onMouseEnter={(e) => animate(e)}
                             >
-                                NodeJS
+                                NextJS
                             </span>
-                        <a
-                            className="link"
-                            href="https://nodejs.org/en/docs"
-                            target="_blank"
-                        >
-                            @NodeJS/Docs
-                        </a>
+                            <a
+                                className="link"
+                                href="https://nextjs.org/showcase"
+                                target="_blank"
+                            >
+                                @NextJS/Showcase
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </motion.div>
+                </motion.div>
             </motion.section>
 
             <motion.section className={styles.section}
@@ -165,7 +165,7 @@ const Cards: React.FunctionComponent = () => {
                             variants={cardVariants}
                             viewport={{ once: true }}
                 >
-                    <div className="screen-image nextjs"></div>
+                    <div className="screen-image nodejs"></div>
                     <div className="screen-overlay"></div>
                     <div className="screen-content">
                         <i className="screen-icon fa-brands fa-codepen"></i>
@@ -173,24 +173,24 @@ const Cards: React.FunctionComponent = () => {
                             <span
                                 id={'name'}
                                 className="name"
-                                data-value="NextJS"
+                                data-value="NodeJS"
                                 onMouseEnter={(e) => animate(e)}
                             >
-                                NextJS
+                                NodeJS
                             </span>
                             <a
                                 className="link"
-                                href="https://nextjs.org/showcase"
+                                href="https://nodejs.org/en/docs"
                                 target="_blank"
                             >
-                                @NextJS/Showcase
+                                @NodeJS/Docs
                             </a>
                         </div>
                     </div>
                 </motion.div>
             </motion.section>
 
-            </div>
+        </div>
 
     )
 }
