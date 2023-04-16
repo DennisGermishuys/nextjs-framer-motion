@@ -1,9 +1,9 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -63,11 +63,11 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-          to bottom,
-          transparent,
-          rgb(var(--background-end-rgb))
-  )
-  rgb(var(--background-start-rgb));
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 
 a {
@@ -124,10 +124,10 @@ a {
 
 .screen-overlay {
   background: linear-gradient(
-          rgb(var(--primary-rgb) / 0.15),
-          rgb(var(--primary-rgb) / 0.15) 3px,
-          transparent 3px,
-          transparent 9px
+    rgb(var(--primary-rgb) / 0.15),
+    rgb(var(--primary-rgb) / 0.15) 3px,
+    transparent 3px,
+    transparent 9px
   );
   background-size: 100% 9px;
   height: 100%;
@@ -148,7 +148,8 @@ a {
     background-position: 30% 35%;
   }
 
-  20.0001% { /* -- View 2 -- */
+  20.0001% {
+    /* -- View 2 -- */
     background-position: 60% 85%;
   }
 
@@ -156,7 +157,8 @@ a {
     background-position: 49% 81%;
   }
 
-  40.0001% { /* -- View 3 -- */
+  40.0001% {
+    /* -- View 3 -- */
     background-position: 80% 42%;
   }
 
@@ -164,7 +166,8 @@ a {
     background-position: 84% 33%;
   }
 
-  60.0001% { /* -- View 4 -- */
+  60.0001% {
+    /* -- View 4 -- */
     background-position: 0 0;
   }
 
@@ -172,7 +175,8 @@ a {
     background-position: 15% 4%;
   }
 
-  80.0001% { /* -- View 5 -- */
+  80.0001% {
+    /* -- View 5 -- */
     background-position: 80% 10%;
   }
 
@@ -233,10 +237,10 @@ a {
 
 .fa-codepen:before {
   font-family: "Source Code Pro", monospace;
-  content: '~';
+  content: "~";
 }
 
-.screen > .screen-content > .screen-user{
+.screen > .screen-content > .screen-user {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -313,14 +317,12 @@ a {
   text-decoration: underline;
 }
 
-@media(max-width: 700px) {
+@media (max-width: 700px) {
   .screen {
     scale: 0.6;
     margin-bottom: 0rem;
   }
 }
-
-
 
 @media (prefers-color-scheme: dark) {
   :root {

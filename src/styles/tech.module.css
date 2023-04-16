@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+.detailsWrapper {
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  padding: 6rem;
+  gap: 80px;
+}
+
+.name {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 80px;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.name {
+  color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  -webkit-text-stroke: 2px lightgray;
+  text-transform: uppercase;
+  position: relative;
+  left: 20px;
+  height: fit-content;
+}
+
+.name::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 0;
+  color: #383d52;
+  -webkit-text-stroke: 0 #383d52;
+  border-right: 2px solid #383d52;
+  overflow: hidden;
+  animation: progress 2s ease-in-out forwards;
+}
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.deepDetails {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  line-height: 70px;
+  text-align: center;
+}
+
+/*.name::before {*/
+/*    background: var(--secondary-glow);*/
+/*    border-radius: 50%;*/
+/*    width: 480px;*/
+/*    height: 360px;*/
+/*    margin-left: -400px;*/
+/*    opacity: 0.5;*/
+/*}*/
+
+/*.name::before,*/
+/*.name::after {*/
+/*    content: "";*/
+/*    left: 50%;*/
+/*    position: absolute;*/
+/*    filter: blur(45px);*/
+/*    transform: translateZ(0);*/
+/*    z-index: 1;*/
+/*}*/

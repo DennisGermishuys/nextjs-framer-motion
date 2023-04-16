@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 .main {
   display: flex;
@@ -10,7 +10,7 @@
 }
 
 .heading {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-size: 58px;
   position: relative;
@@ -18,7 +18,7 @@
 
 .developer {
   color: transparent;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   -webkit-text-stroke: 2px lightgray;
   text-transform: uppercase;
@@ -41,10 +41,13 @@
 }
 
 @keyframes progress {
-  0%, 10%, 100% {
+  0%,
+  10%,
+  100% {
     width: 0;
   }
-  70%, 90% {
+  70%,
+  90% {
     width: 100%;
   }
 }
@@ -140,7 +143,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -169,7 +172,7 @@
 
 .thirteen::before,
 .thirteen::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
 }
@@ -197,7 +200,6 @@
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
-
 }
 
 /* Mobile */
@@ -277,7 +279,6 @@
   .developer::before {
     top: 0;
   }
-
 }
 
 @media (prefers-color-scheme: dark) {

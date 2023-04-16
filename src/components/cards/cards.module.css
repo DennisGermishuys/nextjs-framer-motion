@@ -1,198 +1,201 @@
 .wrapper {
-    display: grid;
-    gap: 100px;
+  display: grid;
+  gap: 100px;
 }
 
 .section {
-    padding-top: 5px;
-    width: 100%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    grid-template-rows: 1fr;
-    overflow: hidden;
-    grid-row-start: 1;
+  padding-top: 5px;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+  grid-row-start: 1;
+  cursor: pointer;
 }
 
 .section:last-of-type {
-    grid-row-start: 2;
-    grid-column-start: 1;
-    grid-column-end: 3;
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin: auto;
+  width: fit-content;
 }
 
 .motionSpan {
-    font-family: "Source Code Pro", monospace;
-    font-size: 24px;
-    width: 50%;
-    text-align: center;
-    position: relative;
-    top: 50px;
-    margin-bottom: 50px;
-    color: #383d52;
+  font-family: "Source Code Pro", monospace;
+  font-size: 24px;
+  width: 50%;
+  text-align: center;
+  position: relative;
+  top: 50px;
+  margin-bottom: 50px;
+  color: #383d52;
 }
 
 .screen {
-    width: 450px;
-    display: flex;
-    border: 3px solid rgb(var(--primary-rgb) / 80%);
-    aspect-ratio: 10 / 16;
-    border-radius: 1rem;
-    background-color: rgb(var(--primary-rgb) / 15%);
-    overflow: hidden;
-    position: relative;
-    z-index: 10;
+  width: 450px;
+  display: flex;
+  border: 3px solid rgb(var(--primary-rgb) / 80%);
+  aspect-ratio: 10 / 16;
+  border-radius: 1rem;
+  background-color: rgb(var(--primary-rgb) / 15%);
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
 }
 
 .screen:after,
 .screen:before {
-    content: "";
-    height: 5px;
-    position: absolute;
-    z-index: 4;
-    left: 50%;
-    translate: -50% 0%;
-    background-color: white;
+  content: "";
+  height: 5px;
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  translate: -50% 0%;
+  background-color: white;
 }
 
 .screen:before {
-    width: 15%;
-    top: 0;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+  width: 15%;
+  top: 0;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .screen:after {
-    width: 25%;
-    bottom: 0;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+  width: 25%;
+  bottom: 0;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 @keyframes pan-overlay {
-    from {
-        background-position: 0 0;
-    }
+  from {
+    background-position: 0 0;
+  }
 
-    to {
-        background-position: 0 -100%;
-    }
+  to {
+    background-position: 0 -100%;
+  }
 }
 
 .screen-overlay {
-    background: linear-gradient(
-            rgb(var(--primary-rgb) / 0.15),
-            rgb(var(--primary-rgb) / 0.15) 3px,
-            transparent 3px,
-            transparent 9px
-    );
-    background-size: 100% 9px;
-    height: 100%;
-    width: 100%;
-    animation: pan-overlay 22s infinite linear;
-    position: absolute;
-    z-index: 2;
-    left: 0;
-    top: 0;
+  background: linear-gradient(
+    rgb(var(--primary-rgb) / 0.15),
+    rgb(var(--primary-rgb) / 0.15) 3px,
+    transparent 3px,
+    transparent 9px
+  );
+  background-size: 100% 9px;
+  height: 100%;
+  width: 100%;
+  animation: pan-overlay 22s infinite linear;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
 }
 
 .screen > .screen-content > .screen-icon {
-    color: white;
-    font-size: 4rem;
-    text-shadow: 0 0 0.5rem white;
-    position: relative;
-    top: 30px;
+  color: white;
+  font-size: 4rem;
+  text-shadow: 0 0 0.5rem white;
+  position: relative;
+  top: 30px;
 }
 
 .screen > .screen-content > .screen-user {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
 }
 
 .screen > .screen-content > .screen-user:before,
 .screen > .screen-content > .screen-user:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    background-color: rgb(var(--primary-rgb));
-    border-radius: 1rem;
-    box-shadow: 0 0 8px 3px rgb(var(--primary-rgb) / 60%);
+  content: "";
+  position: absolute;
+  top: 0;
+  background-color: rgb(var(--primary-rgb));
+  border-radius: 1rem;
+  box-shadow: 0 0 8px 3px rgb(var(--primary-rgb) / 60%);
 }
 
 .screen > .screen-content > .screen-user:before {
-    height: 2px;
-    width: 50px;
-    translate: -20px -1rem;
-    opacity: 0.75;
+  height: 2px;
+  width: 50px;
+  translate: -20px -1rem;
+  opacity: 0.75;
 }
 
 .screen > .screen-content > .screen-user:after {
-    height: 3px;
-    width: 30px;
-    translate: 26px calc(-1rem - 0.5px);
+  height: 3px;
+  width: 30px;
+  translate: 26px calc(-1rem - 0.5px);
 }
 
 .screen > .screen-content > .screen-user > :is(.name, .link) {
-    font-family: "Source Code Pro", monospace;
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
+  font-family: "Source Code Pro", monospace;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .screen > .screen-content > .screen-user > .name {
-    position: relative;
-    font-size: 4.25rem;
-    font-weight: 400;
+  position: relative;
+  font-size: 4.25rem;
+  font-weight: 400;
 }
 
 .screen > .screen-content > .screen-user > .name:before,
 .screen > .screen-content > .screen-user > .name:after {
-    content: "";
-    height: 4px;
-    width: 4px;
-    position: absolute;
-    border: 2px solid white;
-    border-radius: 2px;
+  content: "";
+  height: 4px;
+  width: 4px;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 2px;
 }
 
 .screen > .screen-content > .screen-user > .name:before {
-    top: 55%;
-    right: -1.5rem;
+  top: 55%;
+  right: -1.5rem;
 }
 
 .screen > .screen-content > .screen-user > .name:after {
-    top: 45%;
-    left: -1.5rem;
+  top: 45%;
+  left: -1.5rem;
 }
 
 .screen > .screen-content > .screen-user > .link {
-    opacity: 0.8;
-    font-size: 1.5rem;
-    text-shadow: 0 0 0.5rem white;
-    font-weight: 400;
-    letter-spacing: 0.3rem;
-    text-decoration: none;
+  opacity: 0.8;
+  font-size: 1.5rem;
+  text-shadow: 0 0 0.5rem white;
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+  text-decoration: none;
 }
 
 .screen > .screen-content > .screen-user > .link:is(:hover, :focus) {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-@media(max-width: 700px) {
-    .wrapper {
-        display: block;
-    }
+@media (max-width: 700px) {
+  .wrapper {
+    display: block;
+  }
 
-    .section {
-        display: block;
-    }
+  .section {
+    display: block;
+  }
 
-    .screen {
-        scale: 0.6;
-        margin-bottom: 0rem;
-        align-self: flex-end;
-    }
+  .screen {
+    scale: 0.6;
+    margin-bottom: 0rem;
+    align-self: flex-end;
+  }
 }
