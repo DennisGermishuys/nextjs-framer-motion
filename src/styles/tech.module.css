@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 .detailsWrapper {
-  height: 100vh;
   display: grid;
   justify-items: center;
   padding: 6rem;
-  gap: 80px;
+  gap: 70px;
 }
 
 .name {
@@ -14,6 +13,7 @@
   font-size: 80px;
   position: relative;
   text-transform: capitalize;
+  line-height: 60px;
 }
 
 .name {
@@ -39,6 +39,28 @@
   animation: progress 2s ease-in-out forwards;
 }
 
+.backLink {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  display: block;
+  line-height: 20px;
+  margin-bottom: 35px;
+  opacity: 0.6;
+  font-size: 40px;
+  position: relative;
+  left: 20px;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.image {
+  position: relative !important;
+  object-fit: contain;
+  padding: 20px;
+}
+
 @keyframes progress {
   from {
     width: 0;
@@ -55,21 +77,31 @@
   text-align: center;
 }
 
-/*.name::before {*/
-/*    background: var(--secondary-glow);*/
-/*    border-radius: 50%;*/
-/*    width: 480px;*/
-/*    height: 360px;*/
-/*    margin-left: -400px;*/
-/*    opacity: 0.5;*/
-/*}*/
+@media (max-width: 700px) {
+  .detailsWrapper {
+    padding: 3rem;
+    gap: 40px;
+  }
 
-/*.name::before,*/
-/*.name::after {*/
-/*    content: "";*/
-/*    left: 50%;*/
-/*    position: absolute;*/
-/*    filter: blur(45px);*/
-/*    transform: translateZ(0);*/
-/*    z-index: 1;*/
-/*}*/
+  .name {
+    font-size: 60px;
+    left: 0;
+    line-height: 50px;
+  }
+
+  .deepDetails {
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+  .backLink {
+    font-size: 24px;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    left: 0;
+  }
+
+  .image {
+    padding: 0;
+  }
+}
