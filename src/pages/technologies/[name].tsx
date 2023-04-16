@@ -86,7 +86,7 @@ const page = ({ dbData }: pageProps) => {
         </Link>
         {deepDetails}
       </motion.div>
-      <Image className={styles.image} src={avatar} alt={name} fill />
+      <Image className={styles.image} src={avatar} alt={name} fill priority />
     </div>
   );
 };
