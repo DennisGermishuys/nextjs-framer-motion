@@ -11,6 +11,7 @@ import {
 } from "firebase/firestore";
 import Link from "next/link";
 import Image from "next/image";
+import Head from "next/head";
 
 export const getServerSideProps: GetServerSideProps = async ({
   resolvedUrl,
@@ -70,24 +71,30 @@ const page = ({ dbData }: pageProps) => {
   const { name, details: deepDetails, avatar } = parsedData || {};
 
   return (
-    <div className={styles.detailsWrapper}>
-      <motion.span data-text={name} className={styles.name}>
-        {name}
-      </motion.span>
-      <motion.div
-        className={styles.deepDetails}
-        initial={"hide"}
-        whileInView={"show"}
-        variants={bodyVariants}
-        viewport={{ once: true }}
-      >
-        <Link href={"/"} className={styles.backLink}>
-          Go Back
-        </Link>
-        {deepDetails}
-      </motion.div>
-      <Image className={styles.image} src={avatar} alt={name} fill priority />
-    </div>
+    <>
+      <Head>
+        <title>{name}</title>
+        <meta name={"description"} content={"Technologies"} />
+      </Head>
+      <div className={styles.detailsWrapper}>
+        <motion.span data-text={name} className={styles.name}>
+          {name}
+        </motion.span>
+        <motion.div
+          className={styles.deepDetails}
+          initial={"hide"}
+          whileInView={"show"}
+          variants={bodyVariants}
+          viewport={{ once: true }}
+        >
+          <Link href={"/"} className={styles.backLink}>
+            Go Back
+          </Link>
+          {deepDetails}
+        </motion.div>
+        <Image className={styles.image} src={avatar} alt={name} fill priority />
+      </div>
+    </>
   );
 };
 

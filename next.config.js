@@ -8,13 +8,13 @@ const nextConfig = {
         hostname: "images.unsplash.com",
         port: "",
       },
-        {
+      {
         protocol: "https",
         hostname: "vercel.com",
         port: "",
-      }
+      },
     ],
-  }
+  },
 };
 
 module.exports = nextConfig;
