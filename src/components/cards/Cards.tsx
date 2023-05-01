@@ -1,7 +1,8 @@
-import React from "react";
+import { useState } from "react";
 import styles from "./cards.module.css";
 import { Variants, motion } from "framer-motion";
 import { useRouter } from "next/router";
+import Loader from "../loader/loader";
 
 const cardVariants: Variants = {
   hide: {
@@ -67,8 +68,10 @@ const animate = (e: React.MouseEvent<HTMLSpanElement>): void => {
 
 const Cards = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState<true | false>(false);
 
   const handleNavigate = (url: string) => {
+    setLoading(true);
     router.push(url);
   };
 
@@ -82,6 +85,7 @@ const Cards = () => {
 
   return (
     <div className={styles.wrapper}>
+      {loading ? <Loader /> : null}
       <motion.section
         className={styles.section}
         whileHover={{ scale: 1.05 }}
