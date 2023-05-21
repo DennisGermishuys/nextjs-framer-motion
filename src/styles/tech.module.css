@@ -34,7 +34,6 @@
   width: 0;
   color: #383d52;
   -webkit-text-stroke: 0 #383d52;
-  border-right: 2px solid #383d52;
   overflow: hidden;
   animation: progress 2s ease-in-out forwards;
 }
@@ -43,8 +42,11 @@
   font-family: "Poppins", sans-serif;
   font-weight: bold;
   display: block;
+  width: fit-content;
   line-height: 20px;
   margin-bottom: 35px;
+  margin-right: auto;
+  margin-left: auto;
   opacity: 0.6;
   font-size: 40px;
   position: relative;

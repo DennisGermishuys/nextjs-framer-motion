@@ -13,6 +13,7 @@ export default function Home() {
           content="A little portfolio by Dennis Germishuys"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-site-verification" content="xM6HnZRAwo_qcc4e5lFjCp-Cm1z-PRQPuCiExw4IPm4" />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main className={styles.main}>

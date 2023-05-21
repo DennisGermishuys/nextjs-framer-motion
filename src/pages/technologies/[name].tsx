@@ -73,8 +73,9 @@ const page = ({ dbData }: pageProps) => {
   return (
     <>
       <Head>
-        <title>{name}</title>
+        <title>{name.toUpperCase()}</title>
         <meta name={"description"} content={"Technologies"} />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <div className={styles.detailsWrapper}>
         <motion.span data-text={name} className={styles.name}>
